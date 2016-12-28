@@ -1,0 +1,9 @@
+<label>Make a choice:</label>
+<select 
+  ng-options="option.name for option in $ctrl.foodData.availableOptions track by option.id"
+  ng-model="$ctrl.foodData.selectedOption">
+</select>
+
+<restaurant
+  food-selected="{{ $ctrl.foodData.selectedOption.name }}"=>
+</restaurant>

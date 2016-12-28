@@ -1,0 +1,16 @@
+<label>Choose a restaurant</label>
+
+<select
+  ng-repeat="(foodType, foodData) in $ctrl.restaurantData"
+  ng-show="$ctrl.foodSelected === foodType"
+  ng-options="option.name for option in foodData.availableOptions track by option.id"
+  ng-model="foodData.selectedOption">
+</select>
+
+<label>Address of your restaurant</label>
+
+<select
+  ng-repeat="(foodType, foodData) in $ctrl.restaurantData"
+  ng-show="$ctrl.foodSelected === foodType">
+  <option>{{foodData.selectedOption.address}}</option>
+</select>
